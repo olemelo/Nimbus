@@ -8,3 +8,5 @@ A SoundCloud player that lives in your taskbar.
 # Installing
 
 Download the [latest release for OSX](https://github.com/olemelo/Nimbus/releases/latest).
+
+A redesign of [Cumulus by Gillesdemey](https://github.com/gillesdemey/Cumulus)
