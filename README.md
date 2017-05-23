@@ -1,5 +1,5 @@
 # Nimbus
-A SoundCloud player that lives in your taskbar.
+A SoundCloud player that lives in your menu bar.
 
 [![GitHub release](https://img.shields.io/badge/download-latest-blue.svg)](https://github.com/olemelo/Nimbus/releases/latest)
 
