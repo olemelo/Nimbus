@@ -1,0 +1,51 @@
+/**
+ * Header styles
+ */
+header {
+  $height: 48px;
+  background-color: #000000;
+//background: -webkit-linear-gradient($white, $black);
+  height: $height;
+  line-height: $height;
+
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  ul {
+    width: 100%;
+    display: flex;
+  }
+
+  li { flex: 1; }
+
+  a {
+    -webkit-user-drag: none;
+    display: block;
+    height: $height;
+
+    color: $secondary-text;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+
+    letter-spacing: 0.5px;
+
+    transition: background-color 150ms;
+
+    &.active, &:hover {
+      color: $primary-text;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    //&.active {
+      //color: $soundcloud;
+      //font-weight: 900;
+      //border-bottom: solid 2px $grey-400;
+      //padding: 10px;
+    //}
+  }
+
+}
