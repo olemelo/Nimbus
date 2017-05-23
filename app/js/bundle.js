@@ -241,10 +241,10 @@ var SoundCloud      = require('./utils/soundcloud');
  */
 var Route  = Router.Route;
 var routes = (
-  React.createElement(Route, {handler: nimbusApp}, 
-    React.createElement(Router.DefaultRoute, {name: "feed", handler: Feed}), 
-    React.createElement(Route, {name: "likes", handler: Likes}), 
-    React.createElement(Route, {name: "playlists", handler: Playlists}), 
+  React.createElement(Route, {handler: nimbusApp},
+    React.createElement(Router.DefaultRoute, {name: "feed", handler: Feed}),
+    React.createElement(Route, {name: "likes", handler: Likes}),
+    React.createElement(Route, {name: "playlists", handler: Playlists}),
     React.createElement(Route, {name: "about", handler: About})
   )
 );
@@ -364,19 +364,19 @@ var ListItem = React.createClass({displayName: "ListItem",
     listItemClasses[this.props.type] = this.props.hasOwnProperty('type')
 
     return (
-      React.createElement("div", {className: classNames(listItemClasses), onClick: this.playOrPause}, 
+      React.createElement("div", {className: classNames(listItemClasses), onClick: this.playOrPause},
 
-        React.createElement("div", {className: "item__cover", style: {'backgroundImage' : 'url(' + cover + ')'}}, 
-          React.createElement("div", {className: "cover__overlay"}, 
+        React.createElement("div", {className: "item__cover", style: {'backgroundImage' : 'url(' + cover + ')'}},
+          React.createElement("div", {className: "cover__overlay"},
             React.createElement("button", {className: playPause})
           )
-        ), 
+        ),
 
-        React.createElement("div", {className: "item__meta"}, 
-          React.createElement("div", {className: "item__artist"}, this.props.track.user.username), 
-          React.createElement("div", {className: "item__title"}, this.props.track.title), 
-          React.createElement("span", {className: "item__duration"}, 
-             time.formatDuration(this.props.track.duration / 1000) 
+        React.createElement("div", {className: "item__meta"},
+          React.createElement("div", {className: "item__artist"}, this.props.track.user.username),
+          React.createElement("div", {className: "item__title"}, this.props.track.title),
+          React.createElement("span", {className: "item__duration"},
+             time.formatDuration(this.props.track.duration / 1000)
           )
         )
 
@@ -456,21 +456,21 @@ var PlaylistListItem = React.createClass({displayName: "PlaylistListItem",
       + (this.props.tracks.length > 1 ? 's' : '')
 
     return (
-      React.createElement("div", {className: listItemClasses}, 
+      React.createElement("div", {className: listItemClasses},
 
-        React.createElement("div", {className: "playlist__header", onClick: this.playOrPause}, 
-          React.createElement("div", {className: "item__cover", style: {'backgroundImage' : 'url(' + cover + ')'}}, 
-            React.createElement("div", {className: "cover__overlay"}, 
+        React.createElement("div", {className: "playlist__header", onClick: this.playOrPause},
+          React.createElement("div", {className: "item__cover", style: {'backgroundImage' : 'url(' + cover + ')'}},
+            React.createElement("div", {className: "cover__overlay"},
               React.createElement("button", {className: playPause})
             )
-          ), 
+          ),
 
-          React.createElement("div", {className: "item__meta"}, 
-            React.createElement("div", {className: "item__artist"}, this.props.playlist.user.username), 
-            React.createElement("div", {className: "item__title"}, this.props.playlist.title), 
+          React.createElement("div", {className: "item__meta"},
+            React.createElement("div", {className: "item__artist"}, this.props.playlist.user.username),
+            React.createElement("div", {className: "item__title"}, this.props.playlist.title),
             React.createElement("span", {className: "item__duration"},  numTracks )
           )
-        ), 
+        ),
 
         this.props.tracks.map(function(track) {
 
@@ -483,13 +483,13 @@ var PlaylistListItem = React.createClass({displayName: "PlaylistListItem",
 
           return (
             React.createElement(ListItem, {
-              type: "small", 
-              key:  track.id, 
-              track:  track, 
-              active:  active, 
-              paused:  paused, 
-              loading:  loading, 
-              error:  error 
+              type: "small",
+              key:  track.id,
+              track:  track,
+              active:  active,
+              paused:  paused,
+              loading:  loading,
+              error:  error
             }
             )
           )
@@ -517,7 +517,7 @@ var AboutView = React.createClass({displayName: "AboutView",
   render: function() {
 
     return (
-      React.createElement("div", null, 
+      React.createElement("div", null,
         React.createElement("p", null, "Built with Electron & React")
       )
     );
@@ -626,7 +626,7 @@ var FeedView = React.createClass({displayName: "FeedView",
     })
 
     return (
-      React.createElement("section", {className: classes, onScroll: this._scrollListener, ref: "section"}, 
+      React.createElement("section", {className: classes, onScroll: this._scrollListener, ref: "section"},
         this.state.tracks.map(function(track) {
 
           var me      = this.state.currentTrack.id === track.id
@@ -639,12 +639,12 @@ var FeedView = React.createClass({displayName: "FeedView",
           if (track.kind === 'track')
             return (
               React.createElement(ListItem, {
-                key:  track.id, 
-                track:  track, 
-                active:  active, 
-                paused:  paused, 
-                loading:  loading, 
-                error:  error 
+                key:  track.id,
+                track:  track,
+                active:  active,
+                paused:  paused,
+                loading:  loading,
+                error:  error
               }
               )
             )
@@ -652,16 +652,16 @@ var FeedView = React.createClass({displayName: "FeedView",
           else if (track.kind === 'playlist')
             return (
               React.createElement(PlaylistListItem, {
-                key: track.id, 
-                playlist: track, 
-                tracks: track.tracks, 
-                currentTrack: this.state.currentTrack, 
+                key: track.id,
+                playlist: track,
+                tracks: track.tracks,
+                currentTrack: this.state.currentTrack,
                 currentAudio: this.state.currentAudio
               }
               )
             )
 
-          }, this), 
+          }, this),
         React.createElement("div", {className: page_loading})
       )
     );
@@ -682,15 +682,15 @@ var HeaderSection = React.createClass({displayName: "HeaderSection",
 
   render: function() {
     return (
-      React.createElement("header", null, 
-        React.createElement("ul", null, 
-          React.createElement("li", null, 
+      React.createElement("header", null,
+        React.createElement("ul", null,
+          React.createElement("li", null,
             React.createElement(Link, {to: "feed"}, "Feed")
-          ), 
-          React.createElement("li", null, 
+          ),
+          React.createElement("li", null,
             React.createElement(Link, {to: "likes"}, "Likes")
-          ), 
-          React.createElement("li", null, 
+          ),
+          React.createElement("li", null,
             React.createElement(Link, {to: "playlists"}, "Playlists")
           )
         )
@@ -800,7 +800,7 @@ var LikesView = React.createClass({displayName: "LikesView",
     })
 
     return (
-      React.createElement("section", {className: classes, onScroll: this._scrollListener, ref: "section"}, 
+      React.createElement("section", {className: classes, onScroll: this._scrollListener, ref: "section"},
         this.state.tracks.map(function(track) {
 
           var me      = this.state.currentTrack.id === track.id
@@ -812,16 +812,16 @@ var LikesView = React.createClass({displayName: "LikesView",
 
           return (
             React.createElement(ListItem, {
-              key:  track.id, 
-              track:  track, 
-              active:  active, 
-              paused:  paused, 
-              loading:  loading, 
-              error:  error 
+              key:  track.id,
+              track:  track,
+              active:  active,
+              paused:  paused,
+              loading:  loading,
+              error:  error
             }
             )
           )
-        }, this), 
+        }, this),
         React.createElement("div", {className: page_loading})
       )
     );
@@ -1106,46 +1106,46 @@ var MediaPlayer = React.createClass({displayName: "MediaPlayer",
     })
 
     return (
-      React.createElement("div", {className: classes}, 
+      React.createElement("div", {className: classes},
 
-        React.createElement("div", {className: coverClasses, style: coverStyle}, 
-          React.createElement("div", {className: "media-player__meta"}, 
-            React.createElement("div", {className: "cover__overlay"}, 
-              React.createElement("div", {className: "meta__artist", onClick: this.openPermalinkUser}, 
-                React.createElement("span", null, 
+        React.createElement("div", {className: coverClasses, style: coverStyle},
+          React.createElement("div", {className: "media-player__meta"},
+            React.createElement("div", {className: "cover__overlay"},
+              React.createElement("div", {className: "meta__artist", onClick: this.openPermalinkUser},
+                React.createElement("span", null,
                    this.state.track.user ? this.state.track.user.username : null
                 )
-              ), 
-              React.createElement("div", {className: "meta__title", onClick: this.openPermalink}, 
-                React.createElement("span", null,  this.state.track.title), 
+              ),
+              React.createElement("div", {className: "meta__title", onClick: this.openPermalink},
+                React.createElement("span", null,  this.state.track.title),
                 React.createElement("div", {className: "cover__overlay"}
                 )
               )
             )
           )
-        ), 
+        ),
 
-        React.createElement("div", {className: "media-player__controls"}, 
+        React.createElement("div", {className: "media-player__controls"},
 
-          React.createElement("div", {className: "controls__play-pause-skip"}, 
+          React.createElement("div", {className: "controls__play-pause-skip"},
 
-            React.createElement("div", {className: "controls__volume"}, 
-              React.createElement("div", {className: "volume__icon"}, 
-                React.createElement("button", {className: "icon__toggle", onClick: this.toggleMute}, 
+            React.createElement("div", {className: "controls__volume"},
+              React.createElement("div", {className: "volume__icon"},
+                React.createElement("button", {className: "icon__toggle", onClick: this.toggleMute},
                   React.createElement("i", {className: "fi"}, !this.state.isMuted && this.state.audio.volume > 0 ? '\uf211' : '\uf210')
                 )
-              ), 
+              ),
 
-              React.createElement("div", {className: "volume__seeker", title: volume}, 
+              React.createElement("div", {className: "volume__seeker", title: volume},
                 React.createElement("input", {
-                  type: "range", 
-                  name: "volume", 
-                  id: "volume-controller", 
-                  min: 0, 
-                  step: volumeChangeStep, 
-                  max: 1, 
-                  value: this.state.audio.volume, 
-                  onChange: this.setVolume, 
+                  type: "range",
+                  name: "volume",
+                  id: "volume-controller",
+                  min: 0,
+                  step: volumeChangeStep,
+                  max: 1,
+                  value: this.state.audio.volume,
+                  onChange: this.setVolume,
                   onWheel: this.setVolumeWithWheel}
                 )
               )
@@ -1155,51 +1155,51 @@ var MediaPlayer = React.createClass({displayName: "MediaPlayer",
                 { volume }
               </div>
               */
-            ), 
+            ),
 
-            React.createElement("div", {className: "play-pause-skip__wrapper"}, 
-              React.createElement("button", {className: "controls__previous", disabled: !this.state.audio.src}, 
+            React.createElement("div", {className: "play-pause-skip__wrapper"},
+              React.createElement("button", {className: "controls__previous", disabled: !this.state.audio.src},
                 React.createElement("i", {className: "fi", onClick: this.previousTrack}, '\uf19c')
-              ), 
+              ),
 
-              React.createElement("button", {className: "controls__play-pause", onClick: this.playOrPause}, 
+              React.createElement("button", {className: "controls__play-pause", onClick: this.playOrPause},
                 React.createElement("i", {className: "fi"}, playPause)
-              ), 
+              ),
 
-              React.createElement("button", {className: "controls__next", disabled: !this.state.audio.src}, 
+              React.createElement("button", {className: "controls__next", disabled: !this.state.audio.src},
                 React.createElement("i", {className: "fi", onClick: this.nextTrack}, '\uf17c')
               )
-            ), 
+            ),
 
-            React.createElement("div", {className: "controls__actions"}, 
-              React.createElement("button", {className: "meta__favorite", onClick: this.like, disabled: !this.state.audio.src}, 
+            React.createElement("div", {className: "controls__actions"},
+              React.createElement("button", {className: "meta__favorite", onClick: this.like, disabled: !this.state.audio.src},
                 React.createElement("i", {className: favoriteStyle}, '\uf159')
-              ), 
-              React.createElement("button", {className: "meta__settings", onClick: this.settings}, 
+              ),
+              React.createElement("button", {className: "meta__settings", onClick: this.settings},
                 React.createElement("i", {className: "fi"}, '\uf214')
               )
             )
 
-          ), 
+          ),
 
-          React.createElement("div", {className: "controls__timeline"}, 
+          React.createElement("div", {className: "controls__timeline"},
 
-            React.createElement("div", {className: "timeline__current"}, 
-               currentTime 
-            ), 
+            React.createElement("div", {className: "timeline__current"},
+               currentTime
+            ),
 
-            React.createElement("div", {className: "timeline__seeker"}, 
-              React.createElement("div", {className: "seeker__wrapper", onClick: this.seek}, 
+            React.createElement("div", {className: "timeline__seeker"},
+              React.createElement("div", {className: "seeker__wrapper", onClick: this.seek},
                 React.createElement("progress", {
-                  className: "seeker__progress-bar", 
-                  value:  this.state.audio.currentTime, 
+                  className: "seeker__progress-bar",
+                  value:  this.state.audio.currentTime,
                   max:  (this.state.track.duration / 1000) || 0}
                 )
               )
-            ), 
+            ),
 
-            React.createElement("div", {className: "timeline__duration", onClick: this.toggleTimeLeft}, 
-               duration 
+            React.createElement("div", {className: "timeline__duration", onClick: this.toggleTimeLeft},
+               duration
             )
 
           )
@@ -1229,11 +1229,11 @@ var nimbusApp   = React.createClass({displayName: "nimbusApp",
   render: function() {
 
     return (
-      React.createElement("div", {className: "nimbusapp"}, 
-        React.createElement(Header, null), 
-        React.createElement("div", {className: "content__wrapper"}, 
+      React.createElement("div", {className: "nimbusapp"},
+        React.createElement(Header, null),
+        React.createElement("div", {className: "content__wrapper"},
           React.createElement(RouteHandler, null)
-        ), 
+        ),
         React.createElement(MediaPlayer, null)
       )
     )
@@ -1306,14 +1306,14 @@ var PlaylistsView = React.createClass({displayName: "PlaylistsView",
     })
 
     return (
-      React.createElement("section", {className: classes}, 
+      React.createElement("section", {className: classes},
         this.state.playlists.map(function(playlist) {
           return (
             React.createElement(PlaylistListItem, {
-              key: playlist.id, 
-              playlist: playlist, 
-              tracks: playlist.tracks, 
-              currentTrack: this.state.currentTrack, 
+              key: playlist.id,
+              playlist: playlist,
+              tracks: playlist.tracks,
+              currentTrack: this.state.currentTrack,
               currentAudio: this.state.currentAudio
             }
             )
@@ -2066,8 +2066,8 @@ var _                 = require('lodash')
 var semver            = require('semver')
 
 var GitHub = function() {
-  this._repo       = 'http://github.com/gillesdemey/nimbus'
-  this._endpoint   = 'https://api.github.com/repos/gillesdemey/nimbus'
+  this._repo       = 'http://github.com/olemelo/nimbus'
+  this._endpoint   = 'https://api.github.com/repos/olemelo/nimbus'
 }
 
 GitHub.prototype.getRepoUrl = function() {
@@ -2093,7 +2093,7 @@ GitHub.prototype.getLatestRelease = function() {
     uri: this._endpoint + '/releases/latest',
     json: true,
     headers: {
-      'User-Agent': 'gillesdemey/nimbus'
+      'User-Agent': 'olemelo/nimbus'
     },
   }
 
@@ -2325,7 +2325,7 @@ function _artworkFormat(url, size) {
 /**
  * reject playlists with 0 tracks, maybe some sort of DRM?
  *
- * fixes https://github.com/gillesdemey/nimbus/issues/42
+ * fixes https://github.com/olemelo/nimbus/issues/42
  */
 function rejectEmptyPlaylists(playlists) {
   return _.reject(playlists, function(item) {
@@ -3760,7 +3760,7 @@ module.exports.Dispatcher = require('./lib/Dispatcher');
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule Dispatcher
- * 
+ *
  * @preventMunge
  */
 
@@ -16425,7 +16425,7 @@ var Promise = require('es6-promise').Promise;
 
 
 function reThrow(reject, error) {
-  setTimeout(function(){ 
+  setTimeout(function(){
       if (error && error.stack) {
           console.error(error.stack);
       }
@@ -16466,7 +16466,7 @@ function reThrow(reject, error) {
           try {
             Dispatcher.dispatch(payload);
           } catch (error) {
-            reThrow(reject, error); 
+            reThrow(reject, error);
           }
 
           resolve();
@@ -23005,7 +23005,7 @@ var RouteHandler = require('./RouteHandler');
  *       <Route name="about" handler={About}/>
  *     </Route>
  *   ];
- *   
+ *
  *   Router.run(routes, function (Handler) {
  *     React.render(<Handler/>, document.body);
  *   });
@@ -24218,9 +24218,9 @@ var createRouter = require('./createRouter');
  *   Router.run(routes, function (Handler) {
  *     React.render(<Handler/>, document.body);
  *   });
- * 
+ *
  * Using HTML5 history and a custom "cursor" prop:
- * 
+ *
  *   Router.run(routes, Router.HistoryLocation, function (Handler) {
  *     React.render(<Handler cursor={cursor}/>, document.body);
  *   });
