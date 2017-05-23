@@ -209,7 +209,7 @@ function _artworkFormat(url, size) {
 /**
  * reject playlists with 0 tracks, maybe some sort of DRM?
  *
- * fixes https://github.com/gillesdemey/nimbus/issues/42
+ * fixes https://github.com/olemelo/nimbus/issues/42
  */
 function rejectEmptyPlaylists(playlists) {
   return _.reject(playlists, function(item) {

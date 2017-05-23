@@ -9,7 +9,7 @@
     <key>CFBundleExecutable</key>
     <string>Cumulus Helper EH</string>
     <key>CFBundleIdentifier</key>
-    <string>com.gillesdemey.nimbus.helper.EH</string>
+    <string>com.olemelo.nimbus.helper.EH</string>
     <key>CFBundleName</key>
     <string>Cumulus Helper EH</string>
     <key>CFBundlePackageType</key>

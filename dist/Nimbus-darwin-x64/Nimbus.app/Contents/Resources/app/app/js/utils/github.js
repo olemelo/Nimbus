@@ -7,8 +7,8 @@ var _                 = require('lodash')
 var semver            = require('semver')
 
 var GitHub = function() {
-  this._repo       = 'http://github.com/gillesdemey/nimbus'
-  this._endpoint   = 'https://api.github.com/repos/gillesdemey/nimbus'
+  this._repo       = 'http://github.com/olemelo/nimbus'
+  this._endpoint   = 'https://api.github.com/repos/olemelo/nimbus'
 }
 
 GitHub.prototype.getRepoUrl = function() {
@@ -34,7 +34,7 @@ GitHub.prototype.getLatestRelease = function() {
     uri: this._endpoint + '/releases/latest',
     json: true,
     headers: {
-      'User-Agent': 'gillesdemey/nimbus'
+      'User-Agent': 'olemelo/nimbus'
     },
   }
 

@@ -5,7 +5,7 @@
     <key>BuildMachineOSBuild</key>
     <string>15G31</string>
     <key>CFBundleIdentifier</key>
-    <string>com.gillesdemey.nimbus.helper</string>
+    <string>com.olemelo.nimbus.helper</string>
     <key>CFBundleName</key>
     <string>Cumulus</string>
     <key>CFBundlePackageType</key>

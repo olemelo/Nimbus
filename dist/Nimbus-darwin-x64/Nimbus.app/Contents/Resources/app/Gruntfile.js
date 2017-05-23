@@ -72,7 +72,7 @@ module.exports = function(grunt) {
           arch            : 'x64',
           prune           : true,
           'app-version'   : packageJson.version,
-          'app-bundle-id' : 'com.gillesdemey.nimbus'
+          'app-bundle-id' : 'com.olemelo.nimbus'
         }
       }
     }
